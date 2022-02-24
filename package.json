@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript/issues"
   },
-  "homepage": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript#readme"
+  "homepage": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript#readme",
+  "devDependencies": {
+    "fs-extra": "^10.0.1"
+  }
 }
