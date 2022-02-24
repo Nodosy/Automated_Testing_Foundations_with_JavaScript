@@ -1,43 +1,50 @@
-let name = "Jack";
-let user = false;
-let age = 25;
+// Create a car object, add a color property to it with the value equals 'black'
+let car = {};
+car.color = "black";
+console.log("color: ", car.color);
 
-// Perform addition of various types (string + boolean, string + number, number + boolean)
-let sum_str_bool = name + user;
-let sum_str_num = name + age;
-let sum_num_bool = age + user;
+// Change the color property of the car object to 'green'
+car.color = "green";
+console.log("color: ", car.color);
 
-console.log("string + boolean: ", sum_str_bool);
-console.log("string + number: ", sum_str_num);
-console.log("number + boolean: ", sum_num_bool);
+// Add the power property to the car object, which is a function and displays the engine power to the console
+car.power = function (power) {
+  console.log(power);
+};
+console.log(car.power(199));
 
-// Perform multiplication of various types (string * boolean, string * number, number * boolean)
-let mult_str_bool = name * user;
-let mult_str_num = name * age;
-let mult_num_bool = age * user;
+// Pears and apples are accepted to the warehouse, write a function that returns the result of adding the number of accepted pears and apples
+let countFruits = function (pearsNumber, applesNumber) {
+  return pearsNumber + applesNumber;
+};
+let acceptedPearsApples = countFruits(10, 20);
+console.log(acceptedPearsApples);
 
-console.log("string * boolean: ", mult_str_bool);
-console.log("string * number: ", mult_str_num);
-console.log("number * boolean: ", mult_num_bool);
+// Your name is saved in the payment terminal, write a function to define the name in the terminal (if you entered your name, then hello + name, if not, then there is no such name)
+const NAME = "Nodari";
+if (NAME === "Nodari") {
+  console.log(`Hello ${NAME}`);
+} else {
+  console.log("There is no such name.");
+}
 
-// Divide different types (string / boolean, string / number, number / Boolean)
-let div_str_bool = name / user;
-let div_str_num = name / age;
-let div_num_bool = age / user;
+// Write a function for calculating the type of argument and type output to the console
+let arguments = function (argument) {
+  console.log(typeof argument);
+};
+arguments("hi");
+arguments(false);
 
-console.log("string / boolean: ", div_str_bool);
-console.log("string / number: ", div_str_num);
-console.log("number / Boolean: ", div_num_bool);
-
-// Perform explicit conversion (number, string, boolean)
-let string_to_number = "123";
-string_to_number = Number(string_to_number);
-console.log(typeof string_to_number);
-
-let number_to_string = 123;
-number_to_string = String(number_to_string);
-console.log(typeof number_to_string);
-
-let string_to_boolean = "";
-string_to_boolean = Boolean(string_to_boolean);
-console.log(typeof string_to_boolean);
+// Write a function that determines whether a number is prime or not
+let primeNumber = function (number) {
+  for (let i = 2; i * i <= number; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return number > 1;
+};
+let num1 = primeNumber(4);
+let num2 = primeNumber(5);
+console.log(num1);
+console.log(num2);
