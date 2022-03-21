@@ -21,7 +21,7 @@ exports.config = {
   // will be called from there.
   //
   // specs: ["./test/specs/**/*.js"],
-  specs: ["./test/specs/**/example2.js"],
+  specs: ["./test/specs/**/example.js"],
   // specs: ["./test/specs/**/example.e2e.js"],
   // Patterns to exclude.
   exclude: [

@@ -1,3 +1,36 @@
+// npx wdio run wdio.conf.js
+describe("[I Can Win]", () => {
+  it.only("should open https://zerobin.net/", async () => {
+    await browser.url("https://zerobin.net/");
+
+    await expect(browser).toHaveUrl("https://zerobin.net/");
+    await expect(browser).toHaveTitle("ZeroBin.net");
+
+    const message = $("#message");
+    await expect(message).toBeDisplayed();
+    await expect(message).toExist();
+    await message.setValue("Hello from WebDriver");
+
+    const selectItem = await $("#pasteExpiration");
+    await expect(selectItem).toBeDisplayed();
+    await expect(selectItem).toExist();
+    const optionItem = await $(selectItem).selectByIndex(1);
+
+    const sendButton = await $("#sendbutton");
+    await expect(sendButton).toBeDisplayed();
+    await expect(sendButton).toExist();
+    await sendButton.click();
+    const resultLink = await $("#pastelink");
+    await expect(resultLink).toBeDisplayed();
+    await expect(resultLink).toExist();
+    await expect(resultLink).toHaveTextContaining("Your paste is ");
+
+    const resultCode = await $("#prettyprint");
+    await expect(resultCode).toBeDisplayed();
+    await expect(resultCode).toExist();
+    await expect(resultCode).toHaveTextContaining("Hello from WebDriver");
+  });
+});
 describe("[Hurt Me Plenty]", () => {
   it("should open google cloud", async () => {
     await browser.url("https://cloud.google.com/");
@@ -31,6 +64,7 @@ describe("[Hurt Me Plenty]", () => {
     await expect(h2Head).toBeDisplayed();
     await expect(h2Head).toExist();
 
+    // 🔥
     // await browser.switchToFrame(
     //   $(
     //     "//iframe[@src='/products/calculator/index_d6a98ba38837346d20babc06ff2153b68c2990fa24322fe52c5f83ec3a78c6a0.frame']"
