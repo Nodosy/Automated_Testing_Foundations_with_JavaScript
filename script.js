@@ -14,11 +14,10 @@ car.power = function (power) {
 console.log(car.power(199));
 
 // Pears and apples are accepted to the warehouse, write a function that returns the result of adding the number of accepted pears and apples
-let countFruits = function (pearsNumber, applesNumber) {
+function countFruits(pearsNumber, applesNumber) {
   return pearsNumber + applesNumber;
-};
-let acceptedPearsApples = countFruits(10, 20);
-console.log(acceptedPearsApples);
+}
+console.log("result is: ", countFruits(10, 20));
 
 // Your name is saved in the payment terminal, write a function to define the name in the terminal (if you entered your name, then hello + name, if not, then there is no such name)
 const NAME = "Nodari";
