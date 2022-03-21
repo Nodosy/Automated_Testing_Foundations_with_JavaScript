@@ -1,22 +1,19 @@
 {
-  "name": "automated_testing_foundations_with_javascript",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript.git"
-  },
-  "author": "Nodari",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript/issues"
-  },
-  "homepage": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript#readme",
-  "devDependencies": {
-    "fs-extra": "^10.0.1"
-  }
+    "name": "webdriverio-tests",
+    "version": "0.1.0",
+    "private": true,
+    "devDependencies": {
+        "@babel/core": "^7.17.8",
+        "@babel/preset-env": "^7.16.11",
+        "@babel/register": "^7.17.7",
+        "@wdio/cli": "^7.18.1",
+        "@wdio/local-runner": "^7.18.1",
+        "@wdio/mocha-framework": "^7.18.0",
+        "@wdio/spec-reporter": "^7.18.0",
+        "chromedriver": "^99.0.0",
+        "wdio-chromedriver-service": "^7.3.1"
+    },
+    "scripts": {
+        "wdio": "wdio run wdio.conf.js"
+    }
 }
