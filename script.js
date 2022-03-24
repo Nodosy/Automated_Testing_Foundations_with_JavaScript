@@ -10,23 +10,27 @@ class Calculator {
   add() {
     var sum = 0;
     for (const num of this.numbers) {
-      sum += num;
+      if (typeof num === "number" && Number.isNaN(num) === false) {
+        sum += num;
+      } else {
+        throw new Error("Please enter number!!!");
+      }
     }
     return sum;
   }
   multiply() {
     var product = 1;
     for (const num of this.numbers) {
-      product *= num;
+      if (typeof num === "number" && Number.isNaN(num) === false) {
+        product *= num;
+      } else {
+        throw new Error("Please enter number!!!");
+      }
     }
     return product;
   }
 }
-
-// let calc1 = new Calculator(3, 4, 5);
-// let calc2 = new Calculator(3, 4, 5);
-
+// const calc1 = new Calculator(101, -1, 0, undefined);
 // console.log(calc1.add());
-// console.log(calc2.multiply());
 
 module.exports = Calculator;
