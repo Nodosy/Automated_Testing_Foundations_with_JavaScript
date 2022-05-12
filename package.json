@@ -1,8 +1,8 @@
 {
-  "name": "automated_testing_foundations_with_javascript",
+  "name": "Automated_Testing_Foundations_with_JavaScript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript.git"
   },
-  "author": "Nodari",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript/issues"
   },
-  "homepage": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript#readme",
-  "devDependencies": {
-    "fs-extra": "^10.0.1"
-  }
+  "homepage": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript#readme"
 }
