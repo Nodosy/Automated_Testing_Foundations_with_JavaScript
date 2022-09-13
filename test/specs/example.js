@@ -70,10 +70,10 @@ describe("[Hurt Me Plenty]", () => {
     await browser.pause(2000);
     await browser.switchToFrame(await $("#myFrame"));
 
-    const instances = await $("#input_81");
+    const instances = await $("#input_86");
     await instances.setValue("4");
 
-    const instances_for = await $("#input_82");
+    const instances_for = await $("#input_87");
     await instances_for.setValue("");
 
     const addToEstimate = await $(
