@@ -14,6 +14,18 @@ class GoogleCloudPage extends Page {
     return $("#input_90");
   }
 
+  // public get region() {
+  //   return $("#select_option_105 .md-text");
+  // }
+  // public get region() {
+  //   return $("#select_container_108 md-select-menu");
+  // }
+  // public get region() {
+  //   return $("#select_container_108").$("[value='preemptible']").$(".md-text");
+  //   return $("#select_container_108").$("[value='preemptible']");
+  //   return $("#select_container_108");
+  // }
+
   public get addToEstimateButton() {
     return $(
       "button[class='md-raised md-primary cpc-button md-button md-ink-ripple']"
@@ -21,10 +33,26 @@ class GoogleCloudPage extends Page {
   }
 
   public get listItems() {
-    return $$("[class='md-list-item-text ng-binding']");
+    return $$("div.md-list-item-text.ng-binding");
   }
 
-  // methods
+  public get regionFromList() {
+    return this.listItems[0];
+  }
+
+  public get VMClassFromList() {
+    return this.listItems[2];
+  }
+
+  public get instanceTypeFromList() {
+    return this.listItems[3];
+  }
+
+  public get totalPrice() {
+    return $(".md-title .ng-binding");
+  }
+
+  // actions
   public async clickSearchInput() {
     await (await this.searchInput).click();
   }
@@ -53,13 +81,19 @@ class GoogleCloudPage extends Page {
     await (await this.instances).setValue(value);
   }
 
+  // public async setRegion() {
+  //   let el = await this.region;
+  //   await el.click();
+  // }
+  // public async setRegionRegular() {
+  //   await (await this.region).selectByIndex(1);
+  // }
+  // public async clickRegion() {
+  //   await (await this.region).click();
+  // }
+
   public async clickAddToEstimateButton() {
     await (await this.addToEstimateButton).click();
-  }
-
-  public async getRegion() {
-    let el = await this.listItems[0];
-    return await el.getText();
   }
 
   public open() {

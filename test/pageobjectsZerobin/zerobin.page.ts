@@ -30,7 +30,7 @@ class ZerobinPage extends Page {
     return $("#prettyprint");
   }
 
-  // methods
+  // actions
   public async setTextareaValue(value: string) {
     await (await this.textareaMessage).setValue(value);
   }

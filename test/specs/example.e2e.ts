@@ -61,7 +61,30 @@ describe("google cloud test suite", () => {
 
     await GoogleCloudPage.setInstancesValue(4);
 
+    // await GoogleCloudPage.setRegionRegular();
+    // await expect(await GoogleCloudPage.region).toExist();
+
+    // await GoogleCloudPage.clickRegion();
+
     await GoogleCloudPage.clickAddToEstimateButton();
+
+    await browser.pause(3000);
+
+    await expect(await GoogleCloudPage.regionFromList).toHaveTextContaining(
+      "Region: Iowa"
+    );
+    await expect(await GoogleCloudPage.VMClassFromList).toHaveTextContaining(
+      "Provisioning model: Regular"
+    );
+    await expect(
+      await GoogleCloudPage.instanceTypeFromList
+    ).toHaveTextContaining("Instance type: e2-standard-2");
+    await expect(await GoogleCloudPage.totalPrice).toHaveTextContaining(
+      "Total Estimated Cost: USD 195.67 per 1 month"
+    );
+  });
+  it("[Hardcore] should", async () => {
+    await GoogleCloudPage.open();
   });
 });
 
