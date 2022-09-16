@@ -1,6 +1,6 @@
 import Page from "./page";
 
-class GithubGistPage extends Page {
+class ZerobinPage extends Page {
   // selectors
   public get textareaMessage() {
     return $("#message");
@@ -31,8 +31,8 @@ class GithubGistPage extends Page {
   }
 
   // methods
-  public async setTextareaValue(text: string) {
-    await (await this.textareaMessage).setValue(text);
+  public async setTextareaValue(value: string) {
+    await (await this.textareaMessage).setValue(value);
   }
 
   public async selectExpiration(attr: string, value: string) {
@@ -55,13 +55,9 @@ class GithubGistPage extends Page {
     await el.click();
   }
 
-  public async matchCode() {
-    return await this.previewMessage.getText();
-  }
-
   public open() {
     return super.open("");
   }
 }
 
-export default new GithubGistPage();
+export default new ZerobinPage();
