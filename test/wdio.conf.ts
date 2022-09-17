@@ -49,7 +49,8 @@ export const config: Options.Testrunner = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./test/specs/**/*.ts"],
+  // specs: ["./test/specs/**/*.ts"],
+  specs: ["./test/specs/**/googleCloud.e2e.ts"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -167,7 +168,7 @@ export const config: Options.Testrunner = {
   // See the full list at http://mochajs.org/
   mochaOpts: {
     ui: "bdd",
-    timeout: 100000,
+    timeout: 300000,
   },
   //
   // =====
