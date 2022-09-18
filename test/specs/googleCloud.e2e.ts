@@ -27,6 +27,12 @@ describe("google cloud test suite", () => {
 
     await PricingCalculatorPage.setInstancesValue(4);
 
+    // await PricingCalculatorPage.clickRegularDiv();
+
+    // await PricingCalculatorPage.clickSpotDiv();
+
+    await browser.pause(2000);
+
     await PricingCalculatorPage.clickAddToEstimateButton();
 
     await browser.pause(3000);
@@ -70,6 +76,10 @@ describe("google cloud test suite", () => {
     await PricingCalculatorPage.clickAddToEstimateButton();
 
     await browser.pause(3000);
+
+    await expect(
+      await PricingCalculatorPage.regionFromList
+    ).toHaveTextContaining("Region: Iowa");
 
     await TenMinutesMailPage.openNewWindow();
 

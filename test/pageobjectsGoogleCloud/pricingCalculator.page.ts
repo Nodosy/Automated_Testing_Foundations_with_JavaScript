@@ -62,6 +62,16 @@ class PricingCalculatorPage extends Page {
     return this.emailFormButtons[1];
   }
 
+  //   public get regularDiv() {
+  //     return $("div=Regular");
+  //   }
+
+  //   public get spotDiv() {
+  //     return $(`
+  //     Spot (Preemptible VM)
+  // `);
+  //   }
+
   // actions
 
   public async switchToFirstiFrame() {
@@ -92,6 +102,16 @@ class PricingCalculatorPage extends Page {
   public async clickEmailFormButtonsSendEmail() {
     await (await this.emailFormButtonsSendEmail).click();
   }
+
+  // public async clickRegularDiv() {
+  //   let el = await this.regularDiv;
+  //   await el.click();
+  // }
+
+  // public async clickSpotDiv() {
+  //   let el = await this.spotDiv;
+  //   await el.click();
+  // }
 
   public open() {
     return super.open("");
