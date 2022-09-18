@@ -50,7 +50,7 @@ describe("google cloud test suite", () => {
       "Total Estimated Cost: USD 195.67 per 1 month"
     );
   });
-  it.only("[Hardcore] should", async () => {
+  it("[Hardcore] should", async () => {
     await SearchPage.open();
 
     await SearchPage.clickSearchInput();
