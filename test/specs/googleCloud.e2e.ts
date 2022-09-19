@@ -71,7 +71,11 @@ describe("google cloud test suite", () => {
 
     await PricingCalculatorPage.switchToSecondiFrame();
 
+    await browser.pause(3000);
+
     await PricingCalculatorPage.setInstancesValue(4);
+
+    await browser.pause(3000);
 
     await PricingCalculatorPage.clickAddToEstimateButton();
 

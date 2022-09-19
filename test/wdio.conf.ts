@@ -272,7 +272,18 @@ export const config: Options.Testrunner = {
     { error, result, duration, passed, retries }
   ) {
     if (error) {
-      await browser.saveScreenshot("./test/screenshots/failure.png");
+      const date = new Date();
+
+      let second = await date.getMinutes();
+      let minute = await date.getMinutes();
+      let hour = await date.getHours();
+      let day = await date.getDate();
+      let month = (await date.getMonth()) + 1;
+      let year = await date.getFullYear();
+
+      let currentDate = `${year}-${month}-${day}-${hour}-${minute}-${second}`;
+
+      await browser.saveScreenshot(`./test/screenshots/${currentDate}.png`);
     }
   },
 
