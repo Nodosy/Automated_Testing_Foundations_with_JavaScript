@@ -3,6 +3,8 @@
 /.pnp
 .pnp.js
 
+/.nyc_output
+
 # testing
 /coverage
 
