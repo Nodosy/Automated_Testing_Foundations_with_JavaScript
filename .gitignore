@@ -3,10 +3,9 @@
 /.pnp
 .pnp.js
 
-/.nyc_output
-
 # testing
 /coverage
+/.nyc_output
 
 # production
 /build
