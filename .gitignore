@@ -43,3 +43,4 @@ Thumbs.db
 # reports
 /allure-results
 /allure-report
+/nyc_output
