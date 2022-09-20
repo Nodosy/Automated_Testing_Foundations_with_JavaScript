@@ -2,9 +2,9 @@
   "name": "automated_testing_foundations_with_javascript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc --reporter=text mocha"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Nodosy/Automated_Testing_Foundations_with_JavaScript#readme",
   "devDependencies": {
-    "fs-extra": "^10.0.1"
+    "chai": "^4.3.6",
+    "mocha": "^9.2.1",
+    "nyc": "^15.1.0"
   }
 }
