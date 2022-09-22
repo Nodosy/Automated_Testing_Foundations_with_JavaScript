@@ -10,7 +10,11 @@ class SearchResultsPage extends Page {
   // actions
 
   public async clickCalculatorLinkBoldTag() {
-    await (await this.calculatorLinkBoldTag).click();
+    // await (await this.calculatorLinkBoldTag).click();
+
+    const elem = await this.calculatorLinkBoldTag;
+    await elem.waitForDisplayed({ timeout: 15000 });
+    await elem.click();
   }
 
   public open() {

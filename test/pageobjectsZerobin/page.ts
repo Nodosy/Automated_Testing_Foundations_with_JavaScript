@@ -1,6 +1,6 @@
 export default class Page {
   public async open(path: string) {
     await browser.maximizeWindow();
-    await browser.url(`https://zerobin.net/`);
+    await browser.url("https://zerobin.net/");
   }
 }

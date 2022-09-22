@@ -1,8 +1,9 @@
 import SearchPage from "../pageobjectsGoogleCloud/search.page";
 import SearchResultsPage from "../pageobjectsGoogleCloud/searchResults.page";
 import PricingCalculatorPage from "../pageobjectsGoogleCloud/pricingCalculator.page";
+import TempmailPage from "../pageobjectsGoogleCloud/tempmail.page";
 
-describe("[Hurt Me Plenty]", () => {
+describe("[Hardcore]", () => {
   it("should open google cloud", async () => {
     await SearchPage.open();
 
@@ -28,19 +29,31 @@ describe("[Hurt Me Plenty]", () => {
       await PricingCalculatorPage.regionFromList
     ).toHaveTextContaining("Region: Iowa");
   });
-  it("should open google cloud", async () => {
-    await expect(
-      await PricingCalculatorPage.VMClassFromList
-    ).toHaveTextContaining("Provisioning model: Regular");
-  });
-  it("should open google cloud", async () => {
-    await expect(
-      await PricingCalculatorPage.instanceTypeFromList
-    ).toHaveTextContaining("Instance type: e2-standard-2");
-  });
-  it("should open google cloud", async () => {
-    await expect(await PricingCalculatorPage.totalPrice).toHaveTextContaining(
-      "Total Estimated Cost: USD 195.67 per 1 month"
+  it("shoud switch window", async () => {
+    await TempmailPage.openNewWindow();
+
+    let emailAdressValue = await TempmailPage.getNewTempMail();
+
+    await TempmailPage.switchWindowToGoogle();
+
+    await PricingCalculatorPage.switchToFirstiFrame();
+
+    await PricingCalculatorPage.switchToSecondiFrame();
+
+    await PricingCalculatorPage.clickEmailEstimate();
+
+    await PricingCalculatorPage.setModalWindowEmailInputValue(
+      await emailAdressValue
+    );
+
+    await PricingCalculatorPage.clickEmailFormButtonsSendEmail();
+
+    await TempmailPage.switchToTempmail();
+
+    await TempmailPage.clickOnEmail();
+
+    await expect(await TempmailPage.totalEstimate).toHaveTextContaining(
+      "USD 195.67"
     );
   });
 });

@@ -49,8 +49,10 @@ export const config: Options.Testrunner = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["./test/specs/**/*.ts"],
+  // specs: ["./test/specs/**/*.ts"],
   // specs: ["./test/specs/**/googleCloud.e2e.ts"],
+  specs: ["./test/specs/**/googleCloudHardcore.e2e..ts"],
+  // specs: ["./test/specs/**/zerobin.e2e.ts"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -85,6 +87,7 @@ export const config: Options.Testrunner = {
       maxInstances: 5,
       //
       browserName: "chrome",
+      // browserName: "firefox",
       acceptInsecureCerts: true,
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
@@ -139,7 +142,13 @@ export const config: Options.Testrunner = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver"],
+  // services: ["chromedriver"],
+  services: [
+    [
+      "selenium-standalone",
+      { drivers: { chrome: "latest", firefox: "latest" } },
+    ],
+  ],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -272,16 +281,7 @@ export const config: Options.Testrunner = {
     { error, result, duration, passed, retries }
   ) {
     if (error) {
-      const date = new Date();
-
-      let second = await date.getMinutes();
-      let minute = await date.getMinutes();
-      let hour = await date.getHours();
-      let day = await date.getDate();
-      let month = (await date.getMonth()) + 1;
-      let year = await date.getFullYear();
-
-      let currentDate = `${year}-${month}-${day}-${hour}-${minute}-${second}`;
+      let currentDate = new Date().toISOString().replace(/:/g, "-");
 
       await browser.saveScreenshot(`./test/screenshots/${currentDate}.png`);
     }

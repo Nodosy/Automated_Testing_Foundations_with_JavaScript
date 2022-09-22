@@ -62,20 +62,13 @@ class PricingCalculatorPage extends Page {
     return this.emailFormButtons[1];
   }
 
-  //   public get regularDiv() {
-  //     return $("div=Regular");
-  //   }
-
-  //   public get spotDiv() {
-  //     return $(`
-  //     Spot (Preemptible VM)
-  // `);
-  //   }
-
   // actions
 
   public async switchToFirstiFrame() {
-    await browser.switchToFrame(0);
+    let iframes = await $$("iframe[src]");
+    let iframeFirst = await iframes[0];
+    await iframeFirst.waitForExist({ timeout: 15000 });
+    await browser.switchToFrame(await iframeFirst);
   }
 
   public async switchToSecondiFrame() {
@@ -87,7 +80,9 @@ class PricingCalculatorPage extends Page {
   }
 
   public async clickAddToEstimateButton() {
-    await (await this.addToEstimateButton).click();
+    let elem = this.addToEstimateButton;
+    await elem.waitForDisplayed({ timeout: 15000 });
+    await elem.click();
   }
 
   public async clickEmailEstimate() {
@@ -96,22 +91,13 @@ class PricingCalculatorPage extends Page {
 
   public async setModalWindowEmailInputValue(value: string) {
     let el = await this.emailFormInputsEmail;
+    await el.waitForDisplayed({ timeout: 15000 });
     await el.setValue(value);
   }
 
   public async clickEmailFormButtonsSendEmail() {
     await (await this.emailFormButtonsSendEmail).click();
   }
-
-  // public async clickRegularDiv() {
-  //   let el = await this.regularDiv;
-  //   await el.click();
-  // }
-
-  // public async clickSpotDiv() {
-  //   let el = await this.spotDiv;
-  //   await el.click();
-  // }
 
   public open() {
     return super.open("");
