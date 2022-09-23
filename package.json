@@ -17,6 +17,8 @@
   "scripts": {
     "wdio": "wdio run test/wdio.conf.ts",
     "wdiochrome": "wdio run test/wdio.chrome.conf.ts",
-    "wdiofirefox": "wdio run test/wdio.firefox.conf.ts"
+    "wdiofirefox": "wdio run test/wdio.firefox.conf.ts",
+    "zerobin": "wdio test/wdio.conf.ts --suite zerobin",
+    "end2end": "wdio test/wdio.conf.ts --suite end2end"
   }
 }
