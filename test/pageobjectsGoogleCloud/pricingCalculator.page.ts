@@ -86,7 +86,7 @@ class PricingCalculatorPage extends Page {
 
   public async clickEmailEstimate() {
     let elem = await this.emailEstimate;
-    await elem.waitForDisplayed({ timeout: 15000 });
+    await elem.waitForDisplayed({ timeout: 30000 });
     await elem.click();
   }
 

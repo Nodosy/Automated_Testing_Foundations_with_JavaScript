@@ -176,6 +176,10 @@ export const config: Options.Testrunner = {
       "junit",
       {
         outputDir: "./junitReport",
+        outputFileFormat: function (options) {
+          let currentDate = new Date().toISOString().replace(/:/g, "-");
+          return `junitReport-${currentDate}.xml`;
+        },
       },
     ],
   ],

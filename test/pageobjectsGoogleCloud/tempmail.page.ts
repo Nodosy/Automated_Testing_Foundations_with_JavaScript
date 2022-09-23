@@ -46,7 +46,7 @@ class TempmailPage {
 
   public async clickOnEmail() {
     let elem = await this.emailFromGoogle;
-    await elem.waitForDisplayed({ timeout: 30000 });
+    await elem.waitForDisplayed({ timeout: 50000 });
     await elem.click();
   }
 }
