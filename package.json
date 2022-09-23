@@ -18,8 +18,6 @@
     "wdio": "wdio test/wdio.conf.ts",
     "wdiochrome": "wdio test/wdio.chrome.conf.ts",
     "wdiofirefox": "wdio test/wdio.firefox.conf.ts",
-    "zerobin": "wdio test/wdio.conf.ts --suite zerobin",
-    "end2end": "wdio test/wdio.conf.ts --suite end2end",
     "wdiochromezerobin": "wdio test/wdio.chrome.conf.ts --suite zerobin",
     "wdiochromeend2end": "wdio test/wdio.chrome.conf.ts --suite end2end",
     "wdiofirefoxzerobin": "wdio test/wdio.firefox.conf.ts --suite zerobin",
