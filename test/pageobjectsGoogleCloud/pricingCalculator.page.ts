@@ -1,5 +1,4 @@
 import Page from "./page";
-import TenMinutesMailPage from "./tenMinutesMail.page";
 
 class PricingCalculatorPage extends Page {
   // selectors
@@ -86,7 +85,9 @@ class PricingCalculatorPage extends Page {
   }
 
   public async clickEmailEstimate() {
-    await (await this.emailEstimate).click();
+    let elem = await this.emailEstimate;
+    await elem.waitForDisplayed({ timeout: 15000 });
+    await elem.click();
   }
 
   public async setModalWindowEmailInputValue(value: string) {
