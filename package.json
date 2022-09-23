@@ -15,10 +15,14 @@
     "wdio-chromedriver-service": "^7.3.2"
   },
   "scripts": {
-    "wdio": "wdio run test/wdio.conf.ts",
-    "wdiochrome": "wdio run test/wdio.chrome.conf.ts",
-    "wdiofirefox": "wdio run test/wdio.firefox.conf.ts",
+    "wdio": "wdio test/wdio.conf.ts",
+    "wdiochrome": "wdio test/wdio.chrome.conf.ts",
+    "wdiofirefox": "wdio test/wdio.firefox.conf.ts",
     "zerobin": "wdio test/wdio.conf.ts --suite zerobin",
-    "end2end": "wdio test/wdio.conf.ts --suite end2end"
+    "end2end": "wdio test/wdio.conf.ts --suite end2end",
+    "wdiochromezerobin": "wdio test/wdio.chrome.conf.ts --suite zerobin",
+    "wdiochromeend2end": "wdio test/wdio.chrome.conf.ts --suite end2end",
+    "wdiofirefoxzerobin": "wdio test/wdio.firefox.conf.ts --suite zerobin",
+    "wdiofirefoxend2end": "wdio test/wdio.firefox.conf.ts --suite end2end"
   }
 }

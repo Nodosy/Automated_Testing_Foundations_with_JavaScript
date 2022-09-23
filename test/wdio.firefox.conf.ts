@@ -49,10 +49,17 @@ export const config: Options.Testrunner = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  // specs: ["./test/specs/**/*.ts"],
+  specs: ["./test/specs/**/*.ts"],
   // specs: ["./test/specs/**/googleCloud.e2e.ts"],
-  specs: ["./test/specs/**/googleCloudHardcore.e2e..ts"],
+  // specs: ["./test/specs/**/googleCloudHardcore.e2e..ts"],
   // specs: ["./test/specs/**/zerobin.e2e.ts"],
+  suites: {
+    end2end: [
+      "./test/specs/googleCloud.e2e.ts",
+      "./test/specs/googleCloudHardcore.e2e..ts",
+    ],
+    zerobin: ["./test/specs/zerobin.e2e.ts"],
+  },
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
